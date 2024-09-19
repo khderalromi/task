@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fontawesome/react-fontawesome'
 import { faCartShopping,faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import {faHeart,faUser} from '@fortawesome/free-regular-svg-icons'
 import SideDrawer from './SideDrawer/SideDrawer';
