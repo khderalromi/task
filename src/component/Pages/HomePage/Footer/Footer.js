@@ -27,10 +27,10 @@ const Footer=(props)=>{
 
 
                     <div className='flex flex-row justify-between text-small lg:text-md xl:text-2xl gap-2 md:gap-5'>
-                        <FontAwesomeIcon  icon={faFacebook}/>
-                        <FontAwesomeIcon icon={faTwitter}/>
-                        <FontAwesomeIcon icon={faInstagram}/>
-                        <FontAwesomeIcon icon={faLinkedin}/>
+                        <FontAwesomeIcon  icon={faFacebook} beat/>
+                        <FontAwesomeIcon icon={faTwitter} beat/>
+                        <FontAwesomeIcon icon={faInstagram} beat/>
+                        <FontAwesomeIcon icon={faLinkedin} beat/>
                     </div>
                 </div>
 

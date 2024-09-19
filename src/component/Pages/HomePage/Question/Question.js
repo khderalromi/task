@@ -1,10 +1,22 @@
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 const Question=(props)=>{
-    const [openIndex,setOpenIndex]=useState(0)
+    
+    useEffect(() => {
+        AOS.init({
+          once: false,
+          duration: 650,
+          
+        });
+      }, []);
+
+    const [openIndex,setOpenIndex]=useState(null)
     const question=[
         {
             question:'Is Firebee Safe?',
@@ -54,13 +66,13 @@ const Question=(props)=>{
                 <span className="text-4xl font-poppins">Frequently Asked Questions</span>
             </div>
 
-            <div className="self-center">
+            <div className="self-center ml-2 mr-2" data-aos='zoom-in'>
                 {question.map((item,index)=>{
                     return(    
                     <div className="border-t-2 border-b-2 border-black flex flex-col">
                         <div className="flex justify-between md:gap-96 pt-4 pb-4">
                             <strong>{item.question}</strong>
-                            <FontAwesomeIcon onClick={()=>{return handleToggle(index)}}  icon={faPlus}/>
+                            <FontAwesomeIcon onClick={()=>{return handleToggle(index)}}  icon={openIndex===index ?faMinus:faPlus}/>
                         </div>
                         {openIndex===index && 
                             <div className="text-center">

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import one from '../../../../assests/images/one.png';
 import two from '../../../../assests/images/two.png';
 import c1 from '../../../../assests/images/c1.png';
@@ -12,12 +12,24 @@ import b2 from '../../../../assests/images/b2.png';
 import b3 from '../../../../assests/images/b3.png';
 import b4 from '../../../../assests/images/b4.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart,  faStarHalf, faStopCircle} from '@fortawesome/free-regular-svg-icons'
 import { faStar, faEarth,faCircleCheck,  faStarHalfAlt, faStopwatch20 } from '@fortawesome/free-solid-svg-icons';
 import { faGgCircle } from '@fortawesome/free-brands-svg-icons/faGgCircle';
 import { faUserTie } from '@fortawesome/free-solid-svg-icons/faUserTie';
 import { faRightLong } from '@fortawesome/free-solid-svg-icons/faRightLong';
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Main = (props)=>{
+    
+
+    useEffect(() => {
+        AOS.init({
+          once: false,
+          duration: 650,
+          
+        });
+      }, []);
+
     const images=[c1,c2,c3,c4,c5]
     const images2=[b0,b1,b2,b3,b4]
     const [index,setIndex]=useState(0);
@@ -36,10 +48,10 @@ const Main = (props)=>{
                 </div>
 
                 <div>
-                    <div>
+                    <div data-aos='fade-right'>
                         <img className='' src={images[index]}></img>
                     </div>
-                    <div className='flex gap-2 md:gap-4'>     
+                    <div className='flex gap-2 md:gap-4'  data-aos='zoom-in'>     
                         {[0,1,2,3,4].map((index)=>{
                             return(
                                 <div onClick={()=>{return imageIndexHandler(index)}}>
@@ -50,7 +62,7 @@ const Main = (props)=>{
                     </div>
                 </div>
 
-                <div className='hidden md:grid grid-cols-2 grid-rows-2 gap-4'>
+                <div className='hidden md:grid grid-cols-2 grid-rows-2 gap-4' data-aos='fade-right'>
                     <div className='flex gap-4 '>
                         <FontAwesomeIcon className='size-8 sm:size-12' icon={faStopwatch20} />
                         <p className='text-slate-600 font-poppins'>Fast and very hight<br></br> quality products </p>
@@ -94,7 +106,7 @@ const Main = (props)=>{
                 </div>
 
                 <div className='flex flex-col gap-4'>
-                    <div className='border_gradient p-4 flex flex-col gap-3  bg-white'>
+                    <div className='border_gradient p-4 flex flex-col gap-3  bg-white'  data-aos='fade-left'>
                         <div className='flex flex-col md:flex-row w-full justify-between'>
                             <strong>Firebee Starter Kit</strong>
                             <div className='flex gap-3'>
@@ -141,7 +153,7 @@ const Main = (props)=>{
 
                    {/*************** **************/}
                    
-                   <div className='border-2 rounded-lg p-4 flex flex-col gap-3 bg-white'>
+                   <div className='border-2 rounded-lg p-4 flex flex-col gap-3 bg-white' data-aos='fade-left'>
                         <div className='flex flex-col md:flex-col w-full justify-between'>
                             <strong>Founder’s Kit</strong>
                             <p>799.00$</p>
@@ -197,7 +209,7 @@ const Main = (props)=>{
                     </div>
 
                     
-                <div className='grid md:hidden grid-cols-2 grid-rows-2 gap-4'>
+                <div className='grid md:hidden grid-cols-2 grid-rows-2 gap-4' data-aos='zoom-in'>
                     <div className='flex gap-4 '>
                         <FontAwesomeIcon className='size-6 md:size-8 sm:size-12' icon={faStopwatch20} />
                         <p className='text-slate-600 font-poppins text-small md:text-base'>Fast and very hight<br></br> quality products </p>
