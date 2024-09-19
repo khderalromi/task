@@ -31,7 +31,7 @@ const Header=(props)=>{
 
     return(
         <div className='flex justify-between sm:justify-start sm:gap-5 align-middle p-4'>
-            <img className='size-1/12 sm:size-1/6 mt-1' src={logo}></img>
+            <img className='size-3/12 sm:size-1/6 mt-1' src={logo}></img>
 
             <button className="sm:hidden bg-lemon text-white pl-3 pr-3 sm:text-base  sm:pr-5 sm:pl-5  rounded-2xl">
                 Buy Now
