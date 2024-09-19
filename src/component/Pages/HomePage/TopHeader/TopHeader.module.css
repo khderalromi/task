@@ -1,0 +1,7 @@
+.TopHeader{
+    background-image: url('../../../../assests//images//hero.png');
+    background-size: cover;
+    background-repeat: repeat-x;
+    background-color: rgba(19, 67, 88, 1);
+
+}
